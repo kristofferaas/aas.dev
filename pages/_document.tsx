@@ -74,9 +74,6 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           {/* PWA primary color */}
-          <title>aas.dev</title>
-          <meta name="description" content="aas.dev" />
-          <meta name="viewport" content="initial-scale=1, width=device-width" />
           <meta name="theme-color" content={theme.palette.primary.main} />
           <link rel="shortcut icon" href="/favicon.ico" />
           <link
