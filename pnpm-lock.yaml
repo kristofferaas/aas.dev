@@ -54,7 +54,7 @@ importers:
         specifier: ^5.0.4
         version: 5.0.4
 
-  apps/web:
+  apps/www:
     dependencies:
       next:
         specifier: ^13.4.1
