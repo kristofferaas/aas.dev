@@ -1,10 +1,21 @@
-import { Button, Header } from "ui";
+import { cachedFetch } from "../lib/sanity";
 
-export default function Page() {
+type Pet = {
+  _id: string;
+  name: string;
+};
+
+export default async function Page() {
+  const pets = await cachedFetch<Pet[]>(`*[_type == "pet"]`);
+
   return (
-    <>
-      <Header text="Web" />
-      <Button />
-    </>
+    <main>
+      <h1>Hi :)</h1>
+      <ul>
+        {pets.map((pet) => (
+          <li key={pet._id}>{pet.name}</li>
+        ))}
+      </ul>
+    </main>
   );
 }
