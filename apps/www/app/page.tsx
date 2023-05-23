@@ -4,7 +4,10 @@ import Link from "next/link";
 export default async function Page() {
   return (
     <article className="container mx-auto my-4">
-      <h1 className="text-3xl mb-4">aas.dev</h1>
+      <h1 className="text-3xl mb-4">
+        <span className="pr-2">🚧</span>
+        aas.dev
+      </h1>
       <div className="flex flex-col">
         <RichLink href="/" title="Portfolio" />
         <RichLink href="/" title="About" />
