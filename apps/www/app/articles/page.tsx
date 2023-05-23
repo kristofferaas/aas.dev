@@ -1,5 +1,5 @@
 import { cachedFetch } from "@/lib/sanity";
-import Link from "next/link";
+import ArticleCard from "./article-card";
 
 type Article = {
   _id: string;
@@ -18,18 +18,13 @@ export default async function ArticleOverviewPage() {
   const articles = await getArticles();
 
   return (
-    <article className="container mx-auto">
-      <h1>Portfolio</h1>
-      <ol>
+    <article className="container max-w-2xl my-8">
+      <h1 className="text-2xl font-semibold my-8">Articles</h1>
+      <div className="grid grid-cols-2 gap-4 ">
         {articles.map((article) => (
-          <Link
-            key={article.slug.current}
-            href={`/articles/${article.slug.current}`}
-          >
-            {article.slug.current}
-          </Link>
+          <ArticleCard key={article._id} article={article} />
         ))}
-      </ol>
+      </div>
     </article>
   );
 }
