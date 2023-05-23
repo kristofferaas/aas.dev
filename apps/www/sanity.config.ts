@@ -1,4 +1,5 @@
 import { defineConfig, Config } from "sanity";
+import { visionTool } from "@sanity/vision";
 import { deskTool } from "sanity/desk";
 import { schemaTypes } from "./schemas";
 import { env } from "./lib/env";
@@ -12,7 +13,7 @@ export default defineConfig({
   projectId: env.NEXT_PUBLIC_SANITY_PROJECT_ID,
   dataset: env.NEXT_PUBLIC_SANITY_DATASET,
 
-  plugins: [deskTool()],
+  plugins: [deskTool(), visionTool()],
 
   schema: {
     types: schemaTypes,
