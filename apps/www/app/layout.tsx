@@ -10,10 +10,8 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <AppNav />
-        <main>
-          <div className="h-16" />
-          {children}
-        </main>
+        <div className="h-16" />
+        {children}
       </body>
     </html>
   );
