@@ -1,17 +1,26 @@
-import type { PortableTextBlockComponent } from "@portabletext/react";
+import { PortableTextBlockComponent, toPlainText } from "@portabletext/react";
+import { slugify } from "./utils";
 
 export const Heading1: PortableTextBlockComponent = (props) => {
   return (
-    <h1 className="mt-12 scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+    <h1 className="mt-12 scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl [ &:first-child:opacity-0 ] ]]">
       {props.children}
     </h1>
   );
 };
 
 export const Heading2: PortableTextBlockComponent = (props) => {
+  const slug = slugify(toPlainText(props.value));
+
   return (
-    <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
-      {props.children}
+    <h2
+      id={slug}
+      className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 [&>a]:hover:opacity-100"
+    >
+      {props.children}{" "}
+      <a className="opacity-0 inline-block py-1 px-2 text-gray-300" href={`#${slug}`}>
+        #
+      </a>
     </h2>
   );
 };
