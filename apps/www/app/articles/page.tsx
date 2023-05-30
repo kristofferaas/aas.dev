@@ -2,7 +2,7 @@ import {
   Card,
   CardDescription,
   CardHeader,
-  CardTitle
+  CardTitle,
 } from "@/components/ui/card";
 import Typography from "@/components/ui/typography";
 import { cachedFetch } from "@/lib/sanity";
@@ -25,6 +25,10 @@ const getArticles = async () => {
   );
 };
 
+export const revalidate = 60;
+
+const now = () => new Date().toISOString();
+
 export default async function ArticleOverviewPage() {
   const articles = await getArticles();
 
@@ -32,6 +36,9 @@ export default async function ArticleOverviewPage() {
     <main className="container max-w-2xl my-8">
       <Typography variant="h1" className="mb-8">
         Articles
+      </Typography>
+      <Typography variant="p" className="mb-8">
+        Revalidated at {now()}
       </Typography>
       <ol className="space-y-4">
         {articles.map((article) => (
