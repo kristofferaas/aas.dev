@@ -20,33 +20,39 @@ importers:
         specifier: ^5.0.4
         version: 5.0.4
 
-  apps/docs:
+  apps/galaxy-grub:
     dependencies:
-      next:
-        specifier: ^13.4.1
-        version: 13.4.1(@babel/core@7.21.8)(react-dom@18.2.0)(react@18.2.0)
-      react:
-        specifier: ^18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: ^18.2.0
-        version: 18.2.0(react@18.2.0)
-      ui:
-        specifier: workspace:*
-        version: link:../../packages/ui
-    devDependencies:
       '@types/node':
         specifier: ^17.0.12
         version: 17.0.12
       '@types/react':
-        specifier: ^18.0.22
-        version: 18.2.0
+        specifier: 18.2.12
+        version: 18.2.12
       '@types/react-dom':
-        specifier: ^18.0.7
+        specifier: 18.2.5
+        version: 18.2.5
+      next:
+        specifier: ^13.4.1
+        version: 13.4.1(@babel/core@7.21.8)(react-dom@18.2.0)(react@18.2.0)
+      react:
+        specifier: 18.2.0
         version: 18.2.0
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
+    devDependencies:
+      autoprefixer:
+        specifier: ^10.4.14
+        version: 10.4.14(postcss@8.4.23)
       eslint-config-custom:
         specifier: workspace:*
         version: link:../../packages/eslint-config-custom
+      postcss:
+        specifier: ^8.4.23
+        version: 8.4.23
+      tailwindcss:
+        specifier: ^3.3.2
+        version: 3.3.2
       tsconfig:
         specifier: workspace:*
         version: link:../../packages/tsconfig
