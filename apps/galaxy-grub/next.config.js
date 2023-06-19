@@ -1,4 +1,10 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+module.exports = {
+  reactStrictMode: true,
+  transpilePackages: ["ui"],
+  experimental: {
+    serverActions: true,
+    typedRoutes: true,
+  },
+};
 
-module.exports = nextConfig
