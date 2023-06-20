@@ -2,7 +2,7 @@ import { defineConfig } from "tsup";
 
 export default defineConfig({
   splitting: true,
-  entry: ["src/**/*.tsx"],
+  entry: ["src/**/*.{ts,tsx}"],
   format: ["esm"],
   dts: true,
   minify: true,
