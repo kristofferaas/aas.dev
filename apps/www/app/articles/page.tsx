@@ -1,12 +1,6 @@
-import {
-  Card,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import Typography from "@/components/ui/typography";
 import { cachedFetch } from "@/lib/sanity";
 import Link from "next/link";
+import { Card, CardDescription, CardHeader, CardTitle, Typography } from "ui";
 
 type Article = {
   _id: string;

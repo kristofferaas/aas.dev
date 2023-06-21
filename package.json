@@ -1,5 +1,10 @@
 {
+  "name": "aas.dev",
   "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
@@ -8,11 +13,10 @@
   },
   "devDependencies": {
     "eslint": "^7.32.0",
-    "eslint-config-custom": "workspace:*",
+    "eslint-config-custom": "*",
     "prettier": "^2.5.1",
     "turbo": "^1.9.3",
     "typescript": "^5.0.4"
   },
-  "packageManager": "pnpm@7.15.0",
-  "name": "aas.dev"
+  "packageManager": "npm@8.19.4"
 }

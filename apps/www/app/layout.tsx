@@ -1,5 +1,5 @@
-import AppNav from "./app-nav";
 import "./globals.css";
+import AppNav from "./app-nav";
 
 export default function RootLayout({
   children,
