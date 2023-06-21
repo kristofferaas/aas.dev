@@ -5,7 +5,7 @@
   "exports": {
     ".": "./dist",
     "./styles.css": "./dist/index.css",
-    "./plugin": "./tailwind.config.js"
+    "./preset": "./tailwind.config.js"
   },
   "license": "MIT",
   "scripts": {
