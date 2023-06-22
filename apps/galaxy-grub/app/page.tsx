@@ -28,7 +28,7 @@ export default async function Home() {
         {stars.map((star) => (
           <Card
             key={star._id}
-            className="hover:shadow-lg transition-shadow ease-in"
+            className="shadow-white hover:shadow-lg transition-shadow ease-in"
           >
             <CardHeader>
               <CardTitle>{star.name}</CardTitle>
