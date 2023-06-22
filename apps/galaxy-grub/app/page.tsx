@@ -1,24 +1,49 @@
+import { cachedFetch } from "@/lib/sanity";
 import {
-  Button,
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  Typography
 } from "ui";
+import { StarWithPlanets } from "./_types";
 
-export default function Home() {
+const groq = `*[_type == 'star']{
+  ...,
+  'planets': *[_type == 'planet' && references(^._id)]{
+    _id,
+    name
+  }
+}`;
+
+export default async function Home() {
+  const stars = await cachedFetch<StarWithPlanets[]>(groq);
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <TooltipProvider>
-        <Tooltip>
-          <TooltipTrigger>
-            <Button>Test</Button>
-          </TooltipTrigger>
-          <TooltipContent>
-            <p>Add to library</p>
-          </TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
+    <main className="container max-w-2xl my-4">
+      <Typography variant="h1" className="my-4">
+        Stars
+      </Typography>
+      <ul>
+        {stars.map((star) => (
+          <Card
+            key={star._id}
+            className="hover:shadow-lg transition-shadow ease-in"
+          >
+            <CardHeader>
+              <CardTitle>{star.name}</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-2">
+              <ul>
+                <Typography variant="p">Planets:</Typography>
+                {star.planets.map((planet) => (
+                  <li key={planet._id}>{planet.name}</li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+        ))}
+      </ul>
     </main>
   );
 }

@@ -2,6 +2,7 @@ import { visionTool } from "@sanity/vision";
 import { defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
 import { env } from "./lib/env";
+import { schemaTypes } from "./schemas";
 
 export default defineConfig([
   {
@@ -14,6 +15,10 @@ export default defineConfig([
     dataset: "production",
 
     plugins: [deskTool(), visionTool()],
+
+    schema: {
+      types: schemaTypes,
+    },
   },
   {
     basePath: "/development", // <-- important that `basePath` matches the route you're mounting your studio from, it applies to both `/pages` and `/app`
@@ -25,5 +30,9 @@ export default defineConfig([
     dataset: "dev",
 
     plugins: [deskTool(), visionTool()],
+
+    schema: {
+      types: schemaTypes,
+    },
   },
 ]);

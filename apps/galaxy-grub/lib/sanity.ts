@@ -10,8 +10,6 @@ const client: SanityClient = createClient({
 });
 
 // Wrap the cache function in a way that reuses the TypeScript definitions
-export const cachedFetch: SanityClient["fetch"] = cache(
-  client.fetch.bind(client)
-);
+export const cachedFetch = cache(client.fetch.bind(client));
 
 export default client;
