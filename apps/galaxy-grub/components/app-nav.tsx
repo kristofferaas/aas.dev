@@ -1,5 +1,7 @@
 import { MenuIcon } from "lucide-react";
-import { Button, ThemeToggle, Typography } from "ui";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { Typography } from "@/components/ui/typography";
+import { Button } from "@/components/ui/button";
 
 export type AppNavProps = {};
 

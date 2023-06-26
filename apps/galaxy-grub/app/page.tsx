@@ -1,11 +1,7 @@
 import { cachedFetch } from "@/lib/sanity";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  Typography
-} from "ui";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Typography } from "@/components/ui/typography";
+
 import { StarWithPlanets } from "./_types";
 
 const groq = `*[_type == 'star']{

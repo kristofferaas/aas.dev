@@ -1,6 +1,6 @@
 import { AppNav } from "@/components/app-nav";
 import { Inter } from "next/font/google";
-import { ThemeProvider } from "ui";
+import { ThemeProvider } from "@/components/ui/theme-provider";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });

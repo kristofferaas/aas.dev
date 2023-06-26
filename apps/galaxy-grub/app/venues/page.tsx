@@ -1,5 +1,5 @@
 import { cachedFetch } from "@/lib/sanity";
-import { Typography } from "ui";
+import { Typography } from "@/components/ui/typography";
 import { Venue } from "./_types";
 
 const groq = `*[_type == 'venue']`;

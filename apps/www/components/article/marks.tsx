@@ -5,7 +5,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
   TooltipPortal,
-} from "ui";
+} from "@/components/ui/tooltip";
 import { Link as LinkIcon } from "lucide-react";
 
 export const Link: PortableTextMarkComponent = (props) => {
