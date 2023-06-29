@@ -7,6 +7,8 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Avatar } from "@/components/ui/avatar";
 import { DescriptionCard } from "@/components/card/description-card";
 import { LocationCard } from "@/components/card/location-card";
+import { Grid } from "@/components/layout/grid";
+import { ProductCard } from "@/components/card/product-card";
 
 // TODO: Change to slug
 const groq = `*[_type == 'venue' && _id == $slug][0]{
@@ -47,10 +49,28 @@ export default async function VenuePage({
           {venue.name}
         </Typography>
       </div>
-      <div className="grid grid-cols-2 gap-8 md:grid-cols-3">
-        <DescriptionCard className="col-span-2" value={venue.description} />
+      <Grid>
+        <DescriptionCard className="col-span-3" value={venue.description} />
         <LocationCard />
-      </div>
+      </Grid>
+      <Products />
     </Main>
   );
 }
+
+const Products = async () => {
+  const products = await cachedFetch(`*[_type == 'product']`);
+
+  return (
+    <div>
+      <Typography variant="h3" className="my-4">
+        Products
+      </Typography>
+      <Grid>
+        {products.map((product: any) => (
+          <ProductCard key={product._id} product={product} />
+        ))}
+      </Grid>
+    </div>
+  );
+};

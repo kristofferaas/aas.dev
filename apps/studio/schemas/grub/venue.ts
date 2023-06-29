@@ -41,5 +41,11 @@ export const venue = defineType({
       type: "string",
       validation: (rule) => rule.required(),
     }),
+    defineField({
+      name: "products",
+      title: "Products",
+      type: "array",
+      of: [{ type: "reference", to: [{ type: "product" }] }],
+    }),
   ],
 });

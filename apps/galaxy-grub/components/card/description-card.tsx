@@ -35,7 +35,7 @@ export const DescriptionCard: React.FC<DescriptionCardProps> = ({
           Description
         </CardTitle>
       </CardHeader>
-      <CardContent className="overflow-hidden max-h-40">
+      <CardContent className="overflow-hidden max-h-20">
         {paragraphs.map((paragraph, index) => (
           <Typography key={index} className="block">
             {paragraph}
