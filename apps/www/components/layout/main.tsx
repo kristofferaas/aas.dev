@@ -1,5 +1,5 @@
 import { cva, VariantProps } from "class-variance-authority";
-import { cn } from "@/libutils";
+import { cn } from "@/lib/utils";
 
 const mainVariants = cva("flex", {
   variants: {},

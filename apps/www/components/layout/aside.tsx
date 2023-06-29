@@ -1,5 +1,5 @@
 import { cva, VariantProps } from "class-variance-authority";
-import { cn } from "@/libutils";
+import { cn } from "@/lib/utils";
 
 const asideVariants = cva("py-4 px-5 h-full space-y-2", {
   variants: {
