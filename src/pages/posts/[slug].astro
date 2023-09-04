@@ -1,6 +1,7 @@
 ---
 import { getCollection, type CollectionEntry } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
 
 type Props = {
   entry: CollectionEntry<"blog">;
@@ -21,6 +22,7 @@ const { Content } = await entry.render();
 ---
 
 <Layout title={entry.data.title}>
+  <Breadcrumbs slug={`/posts/${entry.slug}`} />
   <article class="prose lg:prose-xl">
     <Content />
   </article>
