@@ -2,8 +2,41 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Work in progress">
-  <div class="h-screen flex justify-center flex-col items-center">
-    <h1 class="text-9xl">🚧</h1>
+<Layout title="Portfolio — ASCII Edition">
+  <div class="min-h-screen flex items-center justify-center py-16">
+    <pre class="whitespace-pre text-sm sm:text-base leading-6 font-mono">
+   _____      _   _           _  _           
+  |  __ \    | | (_)         | || |          
+  | |__) |__ | |_ _ _ __ ___ | || |_  _   _  
+  |  ___/ _ \| __| | '_ ` _ \| || __|| | | | 
+  | |  | (_) | |_| | | | | | | || |_ | |_| | 
+  |_|   \___/ \__|_|_| |_| |_|_| \__| \__, | 
+                                        __/ | 
+                                       |___/  
+
+  name: Your Name Here
+  role: Software Engineer
+  site: your-domain.dev
+  mail: you@example.com
+  git : github.com/your-handle
+  x   : x.com/your-handle
+
+  about:
+    I build fast, accessible web apps with TypeScript, Astro, and React.
+    I enjoy systems design, DX tooling, and delightful UI details.
+
+  projects:
+    - Post Archive      -> /posts
+    - Starter Template  -> https://github.com/your-handle/starter
+    - Design Tokens CLI -> https://github.com/your-handle/tokens
+
+  stack:
+    - TypeScript • Astro • React • TailwindCSS
+    - Node.js • Vite • Playwright
+    - Cloudflare • Vercel • GitHub Actions
+
+  resume:
+    - PDF: /resume.pdf
+    </pre>
   </div>
 </Layout>
