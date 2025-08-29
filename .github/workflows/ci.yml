@@ -51,5 +51,8 @@ jobs:
       - name: Check code formatting
         run: pnpm format:check
 
+      - name: Run knip
+        run: pnpm knip
+
       - name: Build project
         run: pnpm build
