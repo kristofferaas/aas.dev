@@ -1,16 +1,4 @@
-export interface Project {
-  id: string;
-  title: string;
-  description: string;
-  technologies: string[];
-  image: string;
-  githubUrl?: string;
-  liveUrl?: string;
-  featured: boolean;
-  category: 'web' | 'mobile' | 'ai' | 'other';
-}
-
-export const projects: Project[] = [
+export const projects = [
   {
     id: '1',
     title: 'E-Commerce Platform',
